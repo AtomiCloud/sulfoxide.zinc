@@ -1,0 +1,27 @@
+serviceTree:
+  landscape: pichu
+  cluster: opal
+
+issuers:
+  letsencrypt:
+    email: ernest@eng.atomi.cloud
+    type: ClusterIssuer
+    server: https://acme-v02.api.letsencrypt.org/directory
+    zones:
+      - atomi.cloud
+    secrets:
+      name: cloudflare-api-token
+      key: api-token
+      internal:
+        enable: false
+      external:
+        enable: true
+        refreshInterval: 1h
+        remoteSecretName: /pichu/manual/cert-manager/cloudflare-issuer-token
+    # solvers
+    solvers:
+      - dns01:
+          cloudflare:
+            apiTokenSecretRef:
+              name: cloudflare-api-token
+              key: api-token

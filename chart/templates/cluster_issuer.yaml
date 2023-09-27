@@ -1,0 +1,21 @@
+{{ range $k, $v := .Values.issuers }}
+apiVersion: cert-manager.io/v1
+kind: {{ $v.type }}
+metadata:
+  name: "{{ $.Release.Name }}-{{ $k }}-issuer"
+  labels:
+    {{ include "atomi-cluster-issuer.labels" $ | nindent 4 }}
+spec:
+  acme:
+    email: "{{ $v.email }}"
+    server: "{{ $v.server}}"
+    privateKeySecretRef:
+      name: "{{ $.Release.Name }}-{{ $k }}-issuer"
+    solvers:
+      {{- toYaml $v.solvers | nindent 4 }}
+      selector:
+        dnsZones:
+          {{- range $v.zones }}
+          - {{ . }}
+          {{ end }}
+{{- end }}
