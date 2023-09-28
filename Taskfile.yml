@@ -1,7 +1,7 @@
 version: "3"
 
 env:
-  RELEASE_NAME: cluster-issuer
+  RELEASE_NAME: sulfoxide-zinc
 
 includes:
   pichu:opal:
