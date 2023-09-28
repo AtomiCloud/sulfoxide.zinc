@@ -1,3 +1,15 @@
+## [1.1.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.0.1...v1.1.0) (2023-09-28)
+
+
+### 🚀 New Features
+
+* doppler compatibility ([1e9fdb8](https://github.com/AtomiCloud/sulfoxide.zinc/commit/1e9fdb8fefc6d6b6027eb5f95f54687696bf90c4))
+
+
+### 🐛 Bug Fixes
+
+* incorrect Taskfile release name ([ee12b88](https://github.com/AtomiCloud/sulfoxide.zinc/commit/ee12b888862f63485c23688b1894e5ad1bb34986))
+
 ## [1.0.1](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.0.0...v1.0.1) (2023-09-27)
 
 
