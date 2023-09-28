@@ -7,6 +7,7 @@ with packages;
     bash
     jq
     yq-go
+    skopeo
   ];
 
   dev = [

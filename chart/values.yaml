@@ -1,47 +1,70 @@
+# -- AtomiCloud Service Tree. See [ServiceTree](https://atomicloud.larksuite.com/wiki/OkfJwTXGFiMJkrk6W3RuwRrZs64?theme=DARK&contentTheme=DARK#MHw5d76uDo2tBLx86cduFQMRsBb)
 serviceTree:
-  landscape: pichu
-  cluster: opal
-  platform: systems
-  service: cert-manager
+  platform: sulfoxide
+  service: zinc
   module: issuer
   layer: "1"
 
+# -- Create SecretStore via secret of secrets pattern
+sulfoxide-bromine:
+  # -- Store name to create
+  storeName: doppler
+  # -- Secret of Secrets reference
+  rootSecret:
+    # -- DOPPLER Token Reference
+    ref: "SULFOXIDE_ZINC"
+
+# -- Dictionary of Issuers to configure, where each key is the name of the issuer, and value is the configuration
 issuers:
-  # -- Each Issuers
   letsencrypt:
-    # -- Email for the issuer
+    # -- Email to notify for the issuer
     email: ernest@eng.atomi.cloud
-    # -- Type of Issuer: ClusterIssuer or Issuer
+    # -- Type of Issuer: `ClusterIssuer` or `Issuer`
     type: ClusterIssuer
     # -- ACME compatible server
     server: https://acme-v02.api.letsencrypt.org/directory
-    # -- Zones to issue for
+    # -- List zones to issue for
     zones:
       - atomi.cloud
-    # -- Secrets
+    # -- Secret for DNS provider to issue certificate
     secrets:
+      # -- Name of the secret
       name: cloudflare-api-token-secret
+      # -- Key in the secret to use
       key: api-token
+      # -- Internal Secret, use secret propogated via Helm
       internal:
-        enable: true
+        # -- Enable using internal secret
+        enable: false
+        # -- The actual secret value
         value: ""
+      # -- External Secret, use secret from external secret store
       external:
+        # -- Enable using external secret
         enable: true
+        # -- Refresh Interval for the external secret
         refreshInterval: 1h
-        remoteSecretName: /pichu/opal/cloudflare/token
+        # -- Remote reference for the secret
+        remoteSecretName: CLOUDFLARE_TOKEN
+        # -- Secret store to use
         secretStore:
-          name: aws-ssm-secret-store
-          kind: ClusterSecretStore
+          # -- Name of secret store to use
+          name: doppler
+          # -- Type of Secret Store: `ClusterSecretStore` or `SecretStore`
+          kind: SecretStore
         # -- Secret policy
         policy:
           # -- Creation policy
           creation: Owner
           # -- Deletion policy
           deletion: Retain
-    # solvers
+    # -- TLS Certificate solvers
     solvers:
     - dns01:
         cloudflare:
           apiTokenSecretRef:
             name: cloudflare-api-token-secret
             key: api-token
+
+
+

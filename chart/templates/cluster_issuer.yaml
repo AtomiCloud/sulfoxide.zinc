@@ -3,8 +3,8 @@ apiVersion: cert-manager.io/v1
 kind: {{ $v.type }}
 metadata:
   name: "{{ $.Release.Name }}-{{ $k }}-issuer"
-  labels:
-    {{ include "atomi-cluster-issuer.labels" $ | nindent 4 }}
+  labels: {{- include "sulfoxide-zinc.labels" $ | nindent 4 }}
+  annotations: {{- include "sulfoxide-zinc.annotations" $ | nindent 4 }}
 spec:
   acme:
     email: "{{ $v.email }}"

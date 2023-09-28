@@ -1,6 +1,11 @@
 apiVersion: v2
-name: atomi-cluster-issuer
-description: AtomiCloud Cluster Issuer
+name: sulfoxide-zinc
+description: Helm chart to deploy cluster issuers, which issuer certificate using cert-manager
 type: application
 version: 1.0.1
 appVersion: "0.1.0"
+
+dependencies:
+  - name: sulfoxide-bromine
+    version: 1.1.0
+    repository: oci://ghcr.io/atomicloud/sulfoxide.bromine

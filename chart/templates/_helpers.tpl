@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "atomi-cluster-issuer.name" -}}
+{{- define "sulfoxide-zinc.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "atomi-cluster-issuer.fullname" -}}
+{{- define "sulfoxide-zinc.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,19 +26,19 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "atomi-cluster-issuer.chart" -}}
+{{- define "sulfoxide-zinc.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "atomi-cluster-issuer.labels" -}}
-helm.sh/chart: {{ include "atomi-cluster-issuer.chart" . }}
+{{- define "sulfoxide-zinc.labels" -}}
+helm.sh/chart: {{ include "sulfoxide-zinc.chart" . }}
 {{- range $k, $v := .Values.serviceTree }}
 "atomi.cloud/{{ $k }}": "{{ $v }}"
 {{- end }}
-{{ include "atomi-cluster-issuer.selectorLabels" . }}
+{{ include "sulfoxide-zinc.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -48,8 +48,8 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Common annotations
 */}}
-{{- define "atomi-cluster-issuer.annotations" -}}
-helm.sh/chart: {{ include "atomi-cluster-issuer.chart" . }}
+{{- define "sulfoxide-zinc.annotations" -}}
+helm.sh/chart: {{ include "sulfoxide-zinc.chart" . }}
 {{- range $k, $v := .Values.serviceTree }}
 "atomi.cloud/{{ $k }}": "{{ $v }}"
 {{- end }}
@@ -58,17 +58,17 @@ helm.sh/chart: {{ include "atomi-cluster-issuer.chart" . }}
 {{/*
 Selector labels
 */}}
-{{- define "atomi-cluster-issuer.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "atomi-cluster-issuer.name" . }}
+{{- define "sulfoxide-zinc.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "sulfoxide-zinc.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "atomi-cluster-issuer.serviceAccountName" -}}
+{{- define "sulfoxide-zinc.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "atomi-cluster-issuer.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "sulfoxide-zinc.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

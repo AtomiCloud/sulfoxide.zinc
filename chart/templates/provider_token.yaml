@@ -4,12 +4,10 @@ apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
   name: {{ $.Release.Name -}}-external-secret
-  annotations:
-   {{- include "atomi-cluster-issuer.annotations" $ | nindent 4 }}
+  annotations: {{- include "sulfoxide-zinc.annotations" $ | nindent 4 }}
     "helm.sh/hook": pre-install,pre-upgrade
     "helm.sh/hook-weight": "-2"
-  labels:
-    {{- include "atomi-cluster-issuer.labels" $ | nindent 4 }}
+  labels: {{- include "sulfoxide-zinc.labels" $ | nindent 4 }}
 spec:
   refreshInterval: {{ $v.secrets.external.refreshInterval }}
   secretStoreRef:
@@ -23,5 +21,19 @@ spec:
     - secretKey: {{ $v.secrets.key }}
       remoteRef:
         key: "{{ $v.secrets.external.remoteSecretName }}"
+---
+{{- end }}
+{{- if $v.secrets.internal.enable }}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ $v.secrets.name }}
+  annotations: {{- include "sulfoxide-zinc.annotations" $ | nindent 4 }}
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-weight": "-2"
+  labels: {{- include "sulfoxide-zinc.labels" $ | nindent 4 }}
+data:
+  {{ $v.secrets.key }}: {{ b64enc $v.secrets.internal.value }}
+---
 {{- end }}
 {{- end }}

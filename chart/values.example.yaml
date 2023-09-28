@@ -1,5 +1,5 @@
 serviceTree:
-  landscape: pichu
+  landscape: lapras
   cluster: opal
 
 issuers:
@@ -10,18 +10,20 @@ issuers:
     zones:
       - atomi.cloud
     secrets:
-      name: cloudflare-api-token
+      name: cloudflare-api-token-secret
       key: api-token
       internal:
         enable: false
       external:
         enable: true
         refreshInterval: 1h
-        remoteSecretName: /pichu/manual/cert-manager/cloudflare-issuer-token
-    # solvers
+        remoteSecretName: CLOUDFLARE_TOKEN
     solvers:
-      - dns01:
-          cloudflare:
-            apiTokenSecretRef:
-              name: cloudflare-api-token
-              key: api-token
+    - dns01:
+        cloudflare:
+          apiTokenSecretRef:
+            name: cloudflare-api-token-secret
+            key: api-token
+
+
+

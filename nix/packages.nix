@@ -27,6 +27,7 @@ let
           git
           jq
           yq-go
+          skopeo
 
           nodejs_20
 
