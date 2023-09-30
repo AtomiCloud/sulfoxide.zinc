@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.1.0...v1.1.1) (2023-09-30)
+
+
+### 🐛 Bug Fixes
+
+* change cluster render to cluster template ([8d939d6](https://github.com/AtomiCloud/sulfoxide.zinc/commit/8d939d6b3a990b6c053ab0346a739f0ac3cc10d1))
+
 ## [1.1.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.0.1...v1.1.0) (2023-09-28)
 
 
