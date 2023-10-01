@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.1.1...v1.1.2) (2023-10-01)
+
+
+### 🐛 Bug Fixes
+
+* update to MANUAL_ prefix ([b90210e](https://github.com/AtomiCloud/sulfoxide.zinc/commit/b90210e503d8ccefecf845b1a04c2f669377bd5e))
+
 ## [1.1.1](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.1.0...v1.1.1) (2023-09-30)
 
 
