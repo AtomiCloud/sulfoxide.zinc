@@ -45,7 +45,7 @@ issuers:
         # -- Refresh Interval for the external secret
         refreshInterval: 1h
         # -- Remote reference for the secret
-        remoteSecretName: CLOUDFLARE_TOKEN
+        remoteSecretName: MANUAL_CLOUDFLARE_TOKEN
         # -- Secret store to use
         secretStore:
           # -- Name of secret store to use
@@ -65,6 +65,3 @@ issuers:
           apiTokenSecretRef:
             name: cloudflare-api-token-secret
             key: api-token
-
-
-
