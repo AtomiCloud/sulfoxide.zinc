@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.1.2...v1.2.0) (2023-10-03)
+
+
+### 🚀 New Features
+
+* **entei:** initial values.yaml ([1d8a9ab](https://github.com/AtomiCloud/sulfoxide.zinc/commit/1d8a9abbd3c178d3951203564e189acc1d536070))
+
 ## [1.1.2](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.1.1...v1.1.2) (2023-10-01)
 
 
