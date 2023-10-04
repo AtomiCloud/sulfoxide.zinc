@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.2.0...v1.3.0) (2023-10-04)
+
+
+### 🚀 New Features
+
+* **entei-opal:** migrate entei to entei opal ([37f4058](https://github.com/AtomiCloud/sulfoxide.zinc/commit/37f4058c02e48f593f9421ca40e28dd43b7e2ea3))
+
 ## [1.2.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.1.2...v1.2.0) (2023-10-03)
 
 
