@@ -8,7 +8,7 @@ serviceTree:
 # -- Create SecretStore via secret of secrets pattern
 sulfoxide-bromine:
   # -- Store name to create
-  storeName: doppler
+  storeName: doppler-zinc
   # -- Secret of Secrets reference
   rootSecret:
     # -- DOPPLER Token Reference
@@ -49,7 +49,7 @@ issuers:
         # -- Secret store to use
         secretStore:
           # -- Name of secret store to use
-          name: doppler
+          name: doppler-zinc
           # -- Type of Secret Store: `ClusterSecretStore` or `SecretStore`
           kind: SecretStore
         # -- Secret policy

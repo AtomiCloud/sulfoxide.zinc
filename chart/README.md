@@ -14,19 +14,19 @@ Helm chart to deploy cluster issuers, which issuer certificate using cert-manage
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| issuers | object | `{"letsencrypt":{"email":"ernest@eng.atomi.cloud","secrets":{"external":{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"MANUAL_CLOUDFLARE_TOKEN","secretStore":{"kind":"SecretStore","name":"doppler"}},"internal":{"enable":false,"value":""},"key":"api-token","name":"cloudflare-api-token-secret"},"server":"https://acme-v02.api.letsencrypt.org/directory","solvers":[{"dns01":{"cloudflare":{"apiTokenSecretRef":{"key":"api-token","name":"cloudflare-api-token-secret"}}}}],"type":"ClusterIssuer","zones":["atomi.cloud"]}}` | Dictionary of Issuers to configure, where each key is the name of the issuer, and value is the configuration |
+| issuers | object | `{"letsencrypt":{"email":"ernest@eng.atomi.cloud","secrets":{"external":{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"MANUAL_CLOUDFLARE_TOKEN","secretStore":{"kind":"SecretStore","name":"doppler-zinc"}},"internal":{"enable":false,"value":""},"key":"api-token","name":"cloudflare-api-token-secret"},"server":"https://acme-v02.api.letsencrypt.org/directory","solvers":[{"dns01":{"cloudflare":{"apiTokenSecretRef":{"key":"api-token","name":"cloudflare-api-token-secret"}}}}],"type":"ClusterIssuer","zones":["atomi.cloud"]}}` | Dictionary of Issuers to configure, where each key is the name of the issuer, and value is the configuration |
 | issuers.letsencrypt.email | string | `"ernest@eng.atomi.cloud"` | Email to notify for the issuer |
-| issuers.letsencrypt.secrets | object | `{"external":{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"MANUAL_CLOUDFLARE_TOKEN","secretStore":{"kind":"SecretStore","name":"doppler"}},"internal":{"enable":false,"value":""},"key":"api-token","name":"cloudflare-api-token-secret"}` | Secret for DNS provider to issue certificate |
-| issuers.letsencrypt.secrets.external | object | `{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"MANUAL_CLOUDFLARE_TOKEN","secretStore":{"kind":"SecretStore","name":"doppler"}}` | External Secret, use secret from external secret store |
+| issuers.letsencrypt.secrets | object | `{"external":{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"MANUAL_CLOUDFLARE_TOKEN","secretStore":{"kind":"SecretStore","name":"doppler-zinc"}},"internal":{"enable":false,"value":""},"key":"api-token","name":"cloudflare-api-token-secret"}` | Secret for DNS provider to issue certificate |
+| issuers.letsencrypt.secrets.external | object | `{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"MANUAL_CLOUDFLARE_TOKEN","secretStore":{"kind":"SecretStore","name":"doppler-zinc"}}` | External Secret, use secret from external secret store |
 | issuers.letsencrypt.secrets.external.enable | bool | `true` | Enable using external secret |
 | issuers.letsencrypt.secrets.external.policy | object | `{"creation":"Owner","deletion":"Retain"}` | Secret policy |
 | issuers.letsencrypt.secrets.external.policy.creation | string | `"Owner"` | Creation policy |
 | issuers.letsencrypt.secrets.external.policy.deletion | string | `"Retain"` | Deletion policy |
 | issuers.letsencrypt.secrets.external.refreshInterval | string | `"1h"` | Refresh Interval for the external secret |
 | issuers.letsencrypt.secrets.external.remoteSecretName | string | `"MANUAL_CLOUDFLARE_TOKEN"` | Remote reference for the secret |
-| issuers.letsencrypt.secrets.external.secretStore | object | `{"kind":"SecretStore","name":"doppler"}` | Secret store to use |
+| issuers.letsencrypt.secrets.external.secretStore | object | `{"kind":"SecretStore","name":"doppler-zinc"}` | Secret store to use |
 | issuers.letsencrypt.secrets.external.secretStore.kind | string | `"SecretStore"` | Type of Secret Store: `ClusterSecretStore` or `SecretStore` |
-| issuers.letsencrypt.secrets.external.secretStore.name | string | `"doppler"` | Name of secret store to use |
+| issuers.letsencrypt.secrets.external.secretStore.name | string | `"doppler-zinc"` | Name of secret store to use |
 | issuers.letsencrypt.secrets.internal | object | `{"enable":false,"value":""}` | Internal Secret, use secret propogated via Helm |
 | issuers.letsencrypt.secrets.internal.enable | bool | `false` | Enable using internal secret |
 | issuers.letsencrypt.secrets.internal.value | string | `""` | The actual secret value |
@@ -37,10 +37,10 @@ Helm chart to deploy cluster issuers, which issuer certificate using cert-manage
 | issuers.letsencrypt.type | string | `"ClusterIssuer"` | Type of Issuer: `ClusterIssuer` or `Issuer` |
 | issuers.letsencrypt.zones | list | `["atomi.cloud"]` | List zones to issue for |
 | serviceTree | object | `{"layer":"1","module":"issuer","platform":"sulfoxide","service":"zinc"}` | AtomiCloud Service Tree. See [ServiceTree](https://atomicloud.larksuite.com/wiki/OkfJwTXGFiMJkrk6W3RuwRrZs64?theme=DARK&contentTheme=DARK#MHw5d76uDo2tBLx86cduFQMRsBb) |
-| sulfoxide-bromine | object | `{"rootSecret":{"ref":"SULFOXIDE_ZINC"},"storeName":"doppler"}` | Create SecretStore via secret of secrets pattern |
+| sulfoxide-bromine | object | `{"rootSecret":{"ref":"SULFOXIDE_ZINC"},"storeName":"doppler-zinc"}` | Create SecretStore via secret of secrets pattern |
 | sulfoxide-bromine.rootSecret | object | `{"ref":"SULFOXIDE_ZINC"}` | Secret of Secrets reference |
 | sulfoxide-bromine.rootSecret.ref | string | `"SULFOXIDE_ZINC"` | DOPPLER Token Reference |
-| sulfoxide-bromine.storeName | string | `"doppler"` | Store name to create |
+| sulfoxide-bromine.storeName | string | `"doppler-zinc"` | Store name to create |
 
 ----------------------------------------------
 Autogenerated from chart metadata using [helm-docs v1.11.1](https://github.com/norwoodj/helm-docs/releases/v1.11.1)
