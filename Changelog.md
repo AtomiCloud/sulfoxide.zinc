@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.3.1...v1.4.0) (2023-10-04)
+
+
+### 🚀 New Features
+
+* namespace secret-store ([119458c](https://github.com/AtomiCloud/sulfoxide.zinc/commit/119458cef0502a7cd8747daa6658d75b2341040f))
+
 ## [1.3.1](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.3.0...v1.3.1) (2023-10-04)
 
 
