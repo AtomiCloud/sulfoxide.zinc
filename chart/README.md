@@ -8,7 +8,7 @@ Helm chart to deploy cluster issuers, which issuer certificate using cert-manage
 
 | Repository | Name | Version |
 |------------|------|---------|
-| oci://ghcr.io/atomicloud/sulfoxide.bromine | sulfoxide-bromine | 1.2.2 |
+| oci://ghcr.io/atomicloud/sulfoxide.bromine | sulfoxide-bromine | 1.2.3 |
 
 ## Values
 
