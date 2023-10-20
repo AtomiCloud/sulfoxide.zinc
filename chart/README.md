@@ -8,7 +8,7 @@ Helm chart to deploy cluster issuers, which issuer certificate using cert-manage
 
 | Repository | Name | Version |
 |------------|------|---------|
-| oci://ghcr.io/atomicloud/sulfoxide.bromine | sulfoxide-bromine | 1.1.0 |
+| oci://ghcr.io/atomicloud/sulfoxide.bromine | sulfoxide-bromine | 1.2.2 |
 
 ## Values
 
@@ -37,7 +37,9 @@ Helm chart to deploy cluster issuers, which issuer certificate using cert-manage
 | issuers.letsencrypt.type | string | `"ClusterIssuer"` | Type of Issuer: `ClusterIssuer` or `Issuer` |
 | issuers.letsencrypt.zones | list | `["atomi.cloud"]` | List zones to issue for |
 | serviceTree | object | `{"layer":"1","module":"issuer","platform":"sulfoxide","service":"zinc"}` | AtomiCloud Service Tree. See [ServiceTree](https://atomicloud.larksuite.com/wiki/OkfJwTXGFiMJkrk6W3RuwRrZs64?theme=DARK&contentTheme=DARK#MHw5d76uDo2tBLx86cduFQMRsBb) |
-| sulfoxide-bromine | object | `{"rootSecret":{"ref":"SULFOXIDE_ZINC"},"storeName":"doppler-zinc"}` | Create SecretStore via secret of secrets pattern |
+| sulfoxide-bromine | object | `{"annotations":{"helm.sh/hook":"pre-install,pre-upgrade","helm.sh/weight":"-5"},"rootSecret":{"ref":"SULFOXIDE_ZINC"},"storeName":"doppler-zinc"}` | Create SecretStore via secret of secrets pattern |
+| sulfoxide-bromine.annotations."helm.sh/hook" | string | `"pre-install,pre-upgrade"` | Helm hook to run |
+| sulfoxide-bromine.annotations."helm.sh/weight" | string | `"-5"` | Helm weight to run |
 | sulfoxide-bromine.rootSecret | object | `{"ref":"SULFOXIDE_ZINC"}` | Secret of Secrets reference |
 | sulfoxide-bromine.rootSecret.ref | string | `"SULFOXIDE_ZINC"` | DOPPLER Token Reference |
 | sulfoxide-bromine.storeName | string | `"doppler-zinc"` | Store name to create |
