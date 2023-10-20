@@ -1,3 +1,10 @@
+## [1.6.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.5.0...v1.6.0) (2023-10-20)
+
+
+### 📦 Upstreams Changes
+
+* **bromine:** 1.2.3 ([4558f78](https://github.com/AtomiCloud/sulfoxide.zinc/commit/4558f78346d93189e8fd456fc840297955e08ac5))
+
 ## [1.5.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.4.0...v1.5.0) (2023-10-20)
 
 
