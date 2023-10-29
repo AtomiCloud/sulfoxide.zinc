@@ -1,3 +1,10 @@
+## [1.7.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.6.0...v1.7.0) (2023-10-29)
+
+
+### 🚀 New Features
+
+* expand zinc to virtual clusters ([caba4f4](https://github.com/AtomiCloud/sulfoxide.zinc/commit/caba4f41114c6f6d8a7c0fdddca60799147020a6))
+
 ## [1.6.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.5.0...v1.6.0) (2023-10-20)
 
 
