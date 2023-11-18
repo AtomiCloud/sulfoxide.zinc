@@ -8,16 +8,17 @@ serviceTree:
 # -- Create SecretStore via secret of secrets pattern
 sulfoxide-bromine:
   annotations:
-    # -- Helm hook to run
-    helm.sh/hook: pre-install,pre-upgrade
-    # -- Helm weight to run
-    helm.sh/weight: "-5"
+    argocd.argoproj.io/sync-wave: "-3"
   # -- Store name to create
   storeName: doppler-zinc
   # -- Secret of Secrets reference
   rootSecret:
     # -- DOPPLER Token Reference
     ref: "SULFOXIDE_ZINC"
+
+# -- Secret Annotations (External Secrets) to control synchronization
+secretAnnotation:
+  argocd.argoproj.io/sync-wave: "-2"
 
 # -- Dictionary of Issuers to configure, where each key is the name of the issuer, and value is the configuration
 issuers:
