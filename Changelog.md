@@ -1,3 +1,10 @@
+## [1.8.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.7.0...v1.8.0) (2023-11-18)
+
+
+### 🚀 New Features
+
+* ruby values ([4e696f2](https://github.com/AtomiCloud/sulfoxide.zinc/commit/4e696f2cd27f7a41339353a66df73b4d86cdcafb))
+
 ## [1.7.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.6.0...v1.7.0) (2023-10-29)
 
 

@@ -2,7 +2,7 @@ apiVersion: v2
 name: sulfoxide-zinc
 description: Helm chart to deploy cluster issuers, which issuer certificate using cert-manager
 type: application
-version: 1.7.0
+version: 1.8.0
 appVersion: "0.1.0"
 dependencies:
   - name: sulfoxide-bromine
