@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.8.0...v1.8.1) (2023-11-18)
+
+
+### 🐛 Bug Fixes
+
+* sync wave for secretstore externalsecret ([62fbba2](https://github.com/AtomiCloud/sulfoxide.zinc/commit/62fbba282f0baef8b808d9272d06867ab448b505))
+
 ## [1.8.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.7.0...v1.8.0) (2023-11-18)
 
 
