@@ -1,3 +1,15 @@
+## [1.9.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.8.1...v1.9.0) (2024-02-08)
+
+
+### 🚀 New Features
+
+* onyx cluster ([1363025](https://github.com/AtomiCloud/sulfoxide.zinc/commit/1363025e9a17c878febb6a8e629c3676f2d3d872))
+
+
+### 🐛 Bug Fixes
+
+* releaser ([cb07aca](https://github.com/AtomiCloud/sulfoxide.zinc/commit/cb07aca617f6dcf945230eb8e26bd77fb128a1f2))
+
 ## [1.8.1](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.8.0...v1.8.1) (2023-11-18)
 
 
