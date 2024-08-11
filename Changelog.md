@@ -1,3 +1,10 @@
+## [1.10.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.9.0...v1.10.0) (2024-08-11)
+
+
+### 📦 Upstreams Changes
+
+* upgrade nix, helm upstream, GHA ([e1b4339](https://github.com/AtomiCloud/sulfoxide.zinc/commit/e1b433972ca3d42c037d152b5a38bb4f77e92018))
+
 ## [1.9.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.8.1...v1.9.0) (2024-02-08)
 
 
