@@ -1,20 +1,26 @@
 # -- AtomiCloud Service Tree. See [ServiceTree](https://atomicloud.larksuite.com/wiki/OkfJwTXGFiMJkrk6W3RuwRrZs64?theme=DARK&contentTheme=DARK#MHw5d76uDo2tBLx86cduFQMRsBb)
 serviceTree:
-  platform: sulfoxide
-  service: zinc
+  platform: &platform sulfoxide
+  service: &service zinc
   module: issuer
   layer: "1"
 
 # -- Create SecretStore via secret of secrets pattern
 sulfoxide-bromine:
+  serviceTree:
+    platform: *platform
+    service: *service
   annotations:
     argocd.argoproj.io/sync-wave: "-3"
   # -- Store name to create
-  storeName: doppler-zinc
+  storeName: *service
   # -- Secret of Secrets reference
   rootSecret:
+    name: *service
     # -- DOPPLER Token Reference
-    ref: "SULFOXIDE_ZINC"
+    ref:
+      clientId: SULFOXIDE_ZINC_CLIENT_ID
+      clientSecret: SULFOXIDE_ZINC_CLIENT_SECRET
 
 # -- Secret Annotations (External Secrets) to control synchronization
 secretAnnotation:
@@ -51,11 +57,11 @@ issuers:
         # -- Refresh Interval for the external secret
         refreshInterval: 1h
         # -- Remote reference for the secret
-        remoteSecretName: MANUAL_CLOUDFLARE_TOKEN
+        remoteSecretName: CLOUDFLARE_TOKEN
         # -- Secret store to use
         secretStore:
           # -- Name of secret store to use
-          name: doppler-zinc
+          name: *service
           # -- Type of Secret Store: `ClusterSecretStore` or `SecretStore`
           kind: SecretStore
         # -- Secret policy
