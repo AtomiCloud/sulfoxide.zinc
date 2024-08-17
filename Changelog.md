@@ -1,3 +1,10 @@
+## [1.12.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.11.0...v1.12.0) (2024-08-17)
+
+
+### 🚀 New Features
+
+* remove need for zinc in vclusters ([8c5394f](https://github.com/AtomiCloud/sulfoxide.zinc/commit/8c5394fa89a461264d4869e7b657081afc2b78d9))
+
 ## [1.11.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.10.0...v1.11.0) (2024-08-11)
 
 
