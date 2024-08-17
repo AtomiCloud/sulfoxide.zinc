@@ -1,6 +1,11 @@
 serviceTree:
-  landscape: entei
-  cluster: ruby
+  landscape: &landscape entei
+  cluster: &cluster ruby
+
+sulfoxide-bromine:
+  serviceTree:
+    landscape: *landscape
+    cluster: *cluster
 
 issuers:
   letsencrypt:
@@ -17,7 +22,7 @@ issuers:
       external:
         enable: true
         refreshInterval: 1h
-        remoteSecretName: MANUAL_CLOUDFLARE_DNS_TOKEN
+        remoteSecretName: CLOUDFLARE_DNS_TOKEN
     solvers:
     - dns01:
         cloudflare:
