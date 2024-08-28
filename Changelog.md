@@ -1,3 +1,10 @@
+## [1.13.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.12.0...v1.13.0) (2024-08-28)
+
+
+### 🚀 New Features
+
+* values for mica & talc ([58e2c2c](https://github.com/AtomiCloud/sulfoxide.zinc/commit/58e2c2c7f34e109d3ad3047308fa6f02224b0336))
+
 ## [1.12.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.11.0...v1.12.0) (2024-08-17)
 
 
