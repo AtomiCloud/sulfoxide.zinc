@@ -1,0 +1,31 @@
+serviceTree:
+  landscape: &landscape entei
+  cluster: &cluster mica
+
+sulfoxide-bromine:
+  serviceTree:
+    landscape: *landscape
+    cluster: *cluster
+
+issuers:
+  letsencrypt:
+    email: ernest@eng.atomi.cloud
+    type: ClusterIssuer
+    server: https://acme-v02.api.letsencrypt.org/directory
+    zones:
+      - atomi.cloud
+    secrets:
+      name: cloudflare-api-token-secret
+      key: api-token
+      internal:
+        enable: false
+      external:
+        enable: true
+        refreshInterval: 1h
+        remoteSecretName: CLOUDFLARE_DNS_TOKEN
+    solvers:
+    - dns01:
+        cloudflare:
+          apiTokenSecretRef:
+            name: cloudflare-api-token-secret
+            key: api-token
