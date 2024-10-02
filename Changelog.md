@@ -1,3 +1,10 @@
+## [1.14.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.13.0...v1.14.0) (2024-10-02)
+
+
+### 📦 Upstreams Changes
+
+* **atominix:** ugrading to 28.0.0 ([b7850e8](https://github.com/AtomiCloud/sulfoxide.zinc/commit/b7850e8091e6fefbdd0337e3c480b7970d2efe81))
+
 ## [1.13.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.12.0...v1.13.0) (2024-08-28)
 
 
