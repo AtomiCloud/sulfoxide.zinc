@@ -1,3 +1,10 @@
+## [1.15.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.14.0...v1.15.0) (2025-08-02)
+
+
+### 📦 Upstreams Changes
+
+* migrate to externalsecret v1 ([ce9592e](https://github.com/AtomiCloud/sulfoxide.zinc/commit/ce9592ed8c06d9d233d0c85ded910e10cbb04fe2))
+
 ## [1.14.0](https://github.com/AtomiCloud/sulfoxide.zinc/compare/v1.13.0...v1.14.0) (2024-10-02)
 
 
