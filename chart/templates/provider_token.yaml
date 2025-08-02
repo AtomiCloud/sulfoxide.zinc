@@ -1,6 +1,6 @@
 {{ range $k, $v := .Values.issuers }}
 {{- if $v.secrets.external.enable }}
-apiVersion: external-secrets.io/v1beta1
+apiVersion: external-secrets.io/v1
 kind: ExternalSecret
 metadata:
   name: {{ $.Release.Name -}}-external-secret
