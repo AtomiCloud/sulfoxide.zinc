@@ -1,6 +1,6 @@
 dependencies:
 - name: sulfoxide-bromine
   repository: oci://ghcr.io/atomicloud/sulfoxide.bromine
-  version: 1.6.0
-digest: sha256:23405a610871346423da4e81404ba8e8ed2d01d321f4c92e851ba89ca3075b4c
-generated: "2024-08-11T15:33:14.417267+08:00"
+  version: 1.8.0
+digest: sha256:56b80d4184b27062a4ff0b4a21097a21ad3dc86057e63491687cefe430dba562
+generated: "2025-08-02T14:38:18.421289+08:00"
